@@ -445,7 +445,7 @@ Camera:
   far clip plane: 5000
   field of view: 100
   orthographic: 0
-  orthographic size: 10
+  orthographic size: 1.8
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -730,7 +730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
-  jumpForce: 8
+  jumpForce: 12
   groundCheck: {fileID: 2099368570}
   groundCheckDistance: 0.1
   groundCheckOffset: {x: 0, y: -0.5}
@@ -1146,7 +1146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fb5d2a6494e724ca9c62d260c3c3f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 40
   jumpForce: 12
   groundCheck: {fileID: 2099368570}
   groundCheckDistance: 0.1
