@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private float horizInput;
     private bool isGrounded;
-    private SpriteRenderer spriteRenderer;
+    
 
     void Start()
     {
@@ -30,6 +30,16 @@ public class PlayerMovement : MonoBehaviour
         Vector2 rayOrigin = groundCheck != null ? (Vector2)groundCheck.position : (Vector2)transform.position + groundCheckOffset;
         RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, groundCheckDistance, groundLayer);
         isGrounded = hit.collider != null;
+
+        if (horizInput != 0)
+        {
+            _animator.SetBool("horizInput", true);
+        }
+        else 
+        {
+            _animator.SetBool("horizInput", false);
+        }
+
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
