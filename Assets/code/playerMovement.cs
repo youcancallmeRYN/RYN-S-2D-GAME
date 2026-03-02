@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Animator _animator; 
+
     public float speed = 8f;
     public float jumpForce = 12f;
     public Transform groundCheck;
