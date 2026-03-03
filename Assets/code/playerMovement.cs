@@ -40,8 +40,17 @@ public class PlayerMovement : MonoBehaviour
             _animator.SetBool("horizInput", false);
         }
 
+        if ( Input.GetKeyDown(KeyCode.A))
+        {
+            horizInput = -1f;
+        }
+        if ( Input.GetKeyDown(KeyCode.D))
+        {
+            horizInput = 1f;
+        }
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+
+        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
