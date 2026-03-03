@@ -1,10 +1,12 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovementWASD : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Animator _animator; 
 
+     //private float MovementX;
+     //private float MovementY;
     public float speed = 8f;
     public float jumpForce = 12f;
     public Transform groundCheck;
@@ -15,12 +17,14 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private float horizInput;
     private bool isGrounded;
+
     
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        //MovementX = 0;
     }
 
     void Update()
@@ -30,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 rayOrigin = groundCheck != null ? (Vector2)groundCheck.position : (Vector2)transform.position + groundCheckOffset;
         RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, groundCheckDistance, groundLayer);
         isGrounded = hit.collider != null;
-
+        //for PLAYER 1 ONLY
         if (horizInput != 0)
         {
             _animator.SetBool("horizInput", true);
@@ -48,12 +52,11 @@ public class PlayerMovement : MonoBehaviour
         {
             horizInput = 1f;
         }
-
-
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
+
 
         if (spriteRenderer != null)
         {
