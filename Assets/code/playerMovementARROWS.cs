@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class playerMovementARROWS : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private Animator _animator; 
+    private SpriteRenderer spriteRenderer;
+    private Animator _animator; 
 
     public float speed = 8f;
     public float jumpForce = 12f;
@@ -17,15 +17,21 @@ public class playerMovementARROWS : MonoBehaviour
     private bool isGrounded;
     
 
+    
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
+       
+        
     }
 
     void Update()
     {
         horizInput = Input.GetAxisRaw("Horizontal");
+       
 
         Vector2 rayOrigin = groundCheck != null ? (Vector2)groundCheck.position : (Vector2)transform.position + groundCheckOffset;
         RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, groundCheckDistance, groundLayer);
@@ -40,15 +46,7 @@ public class playerMovementARROWS : MonoBehaviour
             _animator.SetBool("horizInput", false);
         }
 
-        if ( Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            horizInput = -1f;
-        }
-        if ( Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            horizInput = 1f;
-        }
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }

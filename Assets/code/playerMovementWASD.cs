@@ -2,11 +2,8 @@ using UnityEngine;
 
 public class PlayerMovementWASD : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private Animator _animator; 
-
-     //private float MovementX;
-     //private float MovementY;
+    private SpriteRenderer spriteRenderer;
+    private Animator _animator; 
     public float speed = 8f;
     public float jumpForce = 12f;
     public Transform groundCheck;
@@ -24,17 +21,17 @@ public class PlayerMovementWASD : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        //MovementX = 0;
+        _animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        horizInput = Input.GetAxisRaw("Horizontal");
+        horizInput = Input.GetAxisRaw("Horizontal2");
 
         Vector2 rayOrigin = groundCheck != null ? (Vector2)groundCheck.position : (Vector2)transform.position + groundCheckOffset;
         RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, groundCheckDistance, groundLayer);
         isGrounded = hit.collider != null;
-        //for PLAYER 1 ONLY
+
         if (horizInput != 0)
         {
             _animator.SetBool("horizInput", true);
@@ -44,15 +41,7 @@ public class PlayerMovementWASD : MonoBehaviour
             _animator.SetBool("horizInput", false);
         }
 
-        if ( Input.GetKeyDown(KeyCode.A))
-        {
-            horizInput = -1f;
-        }
-        if ( Input.GetKeyDown(KeyCode.D))
-        {
-            horizInput = 1f;
-        }
-        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+        if (Input.GetButtonDown("Jump2") && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
