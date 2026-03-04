@@ -32,13 +32,18 @@ public class PlayerMovementWASD : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, groundCheckDistance, groundLayer);
         isGrounded = hit.collider != null;
 
-        if (horizInput != 0)
+        /*if (horizInput != 0)
         {
             _animator.SetBool("horizInput", true);
         }
         else 
         {
             _animator.SetBool("horizInput", false);
+        }*/
+
+        if (_animator)
+        {
+            _animator.SetFloat("horizInput", Mathf.Abs(horizInput));
         }
 
         if (Input.GetButtonDown("Jump2") && isGrounded)
