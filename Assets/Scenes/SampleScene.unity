@@ -1168,11 +1168,14 @@ GameObject:
   - component: {fileID: 1031032692}
   - component: {fileID: 1031032693}
   - component: {fileID: 1031032694}
+<<<<<<< HEAD
   - component: {fileID: 1031032695}
 <<<<<<< HEAD
   - component: {fileID: 1031032696}
 =======
 >>>>>>> 864760263e2e1fe26442c3d01d28bc6b8318fedc
+=======
+>>>>>>> parent of 8647602 (attack test)
   m_Layer: 0
   m_Name: PLAYER
   m_TagString: Player
@@ -1367,6 +1370,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+<<<<<<< HEAD
 --- !u!114 &1031032695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1400,6 +1404,8 @@ MonoBehaviour:
 >>>>>>> 864760263e2e1fe26442c3d01d28bc6b8318fedc
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> parent of 8647602 (attack test)
 --- !u!1 &1076358455
 GameObject:
   m_ObjectHideFlags: 0
@@ -1881,7 +1887,6 @@ GameObject:
   - component: {fileID: 1413537452}
   - component: {fileID: 1413537457}
   - component: {fileID: 1413537458}
-  - component: {fileID: 1413537459}
   m_Layer: 0
   m_Name: PLAYER 2
   m_TagString: Player
@@ -2075,6 +2080,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+<<<<<<< HEAD
 --- !u!114 &1413537459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2098,6 +2104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 >>>>>>> 864760263e2e1fe26442c3d01d28bc6b8318fedc
+=======
+>>>>>>> parent of 8647602 (attack test)
 --- !u!1 &1490604988
 GameObject:
   m_ObjectHideFlags: 0
