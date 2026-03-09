@@ -1170,17 +1170,27 @@ GameObject:
   - component: {fileID: 1031032694}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d45173e750ae2a5b0fb232fed53a997d739dea93
   - component: {fileID: 1031032695}
+<<<<<<< HEAD
   - component: {fileID: 1031032696}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d45173e750ae2a5b0fb232fed53a997d739dea93
 =======
 >>>>>>> 864760263e2e1fe26442c3d01d28bc6b8318fedc
 =======
 >>>>>>> parent of 8647602 (attack test)
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 4ea1818 (ok)
 =======
 >>>>>>> parent of b46993a (attempt 2 to pull)
+=======
+>>>>>>> d45173e750ae2a5b0fb232fed53a997d739dea93
   m_Layer: 0
   m_Name: PLAYER
   m_TagString: Player
@@ -2117,6 +2127,8 @@ MonoBehaviour:
   currentHealth: 0
   healthSlider: {fileID: 1931220118}
 <<<<<<< HEAD
+=======
+>>>>>>> d45173e750ae2a5b0fb232fed53a997d739dea93
 =======
   m_Script: {fileID: 11500000, guid: 0b6a6f5e02058b44f8f5eb094e5acebe, type: 3}
   m_Name: 
