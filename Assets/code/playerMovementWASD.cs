@@ -44,6 +44,7 @@ public class PlayerMovementWASD : MonoBehaviour
         if (_animator)
         {
             _animator.SetFloat("horizInput", Mathf.Abs(horizInput));
+            _animator.SetBool("isGrounded", isGrounded);
         }
         
 

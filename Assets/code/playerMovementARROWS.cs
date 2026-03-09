@@ -48,6 +48,7 @@ public class playerMovementARROWS : MonoBehaviour
         if (_animator)
         {
             _animator.SetFloat("horizInput", Mathf.Abs(horizInput));
+            _animator.SetBool("isGrounded", isGrounded);
         }
 
         if (Input.GetButtonDown("Jump") && isGrounded)
