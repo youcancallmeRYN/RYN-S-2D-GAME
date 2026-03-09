@@ -45,6 +45,7 @@ public class PlayerMovementWASD : MonoBehaviour
         {
             _animator.SetFloat("horizInput", Mathf.Abs(horizInput));
         }
+        
 
         if (Input.GetButtonDown("Jump2") && isGrounded)
         {
