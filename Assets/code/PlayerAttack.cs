@@ -11,8 +11,8 @@ public class PlayerAttack : MonoBehaviour
 
     private float timeBtwAttack;
     public float startTimeBtwAttack;
-    public Transform attackPos;
-    public float attackRange;
+    public Vector2 attackPos = new Vector2(0,0); //Transform
+    public Vector2 attackRange; //float
     public LayerMask whatIsPlayers;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -31,10 +31,10 @@ public class PlayerAttack : MonoBehaviour
             //Attack cooldown
       if(Input.GetButtonDown("AttackP1") && isGrounded)
       {
-        Collider2D[] playersToDamage = Physics2D.OverlapCollider(attackPos, attackRange , whatIsPlayers);
+        Collider2D[] playersToDamage = Physics2D.OverlapBoxAll(attackPos, attackRange , whatIsPlayers);
         for (int i = 0; i < playersToDamage.Length; i++)
         {
-            playersToDamage[i].GetComponent<Rigidbody2D>().ApplyDamage(damage);
+            playersToDamage[i].GetComponent<Rigidbody2D>().IDamageable(damage);
         }
       }
       timeBtwAttack = startTimeBtwAttack;
