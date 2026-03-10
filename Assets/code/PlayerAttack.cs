@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
  
 public class PlayerAttack : MonoBehaviour
@@ -6,14 +8,17 @@ public class PlayerAttack : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator _animator;
     private bool isGrounded;
+    private bool isAttacking;
     private Rigidbody2D rb;
     [SerializeField] float damage = 8f;
 
     private float timeBtwAttack;
     public float startTimeBtwAttack;
     public Vector2 attackPos = new Vector2(0,0); //Transform
-    public Vector2 attackRange; //float
+    public float attackRange; //float
     public LayerMask whatIsPlayers;
+
+    public GameObject hitBox;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,11 +36,12 @@ public class PlayerAttack : MonoBehaviour
             //Attack cooldown
       if(Input.GetButtonDown("AttackP1") && isGrounded)
       {
-        Collider2D[] playersToDamage = Physics2D.OverlapBoxAll(attackPos, attackRange , whatIsPlayers);
-        for (int i = 0; i < playersToDamage.Length; i++)
+        Collider2D[] playersToDamage = Physics2D.OverlapCircleAll(hitBox.transform.position, attackRange , whatIsPlayers);
+        foreach (Collider2D Gameobject in playersToDamage)
         {
-            playersToDamage[i].GetComponent<Rigidbody2D>().IDamageable(damage);
-        }
+            Debug.Log("Hit!");
+        } 
+        
       }
       timeBtwAttack = startTimeBtwAttack;
         }
@@ -47,7 +53,7 @@ public class PlayerAttack : MonoBehaviour
        
       if(_animator)
       {
-        _animator.SetBool("isGrounded", isGrounded);
+        _animator.SetBool("isAttacking", isAttacking);
       }
     }
 
@@ -63,7 +69,7 @@ public class PlayerAttack : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(attackPos.position, attackRange);
+        Gizmos.DrawWireSphere(hitBox.transform.position, attackRange);
 
     }
 }
