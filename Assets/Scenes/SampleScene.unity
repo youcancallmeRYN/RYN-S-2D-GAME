@@ -872,7 +872,7 @@ Camera:
   far clip plane: 5000
   field of view: 130
   orthographic: 0
-  orthographic size: 1.8
+  orthographic size: 10
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -1699,7 +1699,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1176430725}
   m_Layer: 0
-  m_Name: hey, victus
+  m_Name: hey, victus - heyy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
